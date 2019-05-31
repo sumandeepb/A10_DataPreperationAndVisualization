@@ -24,7 +24,7 @@ class CricInfoScrapeSpider(scrapy.Spider):
             '//td[@class="ciPlayernames"]//a/@href'
         )
 
-        for url in urlPath.extract()[1:2]:
+        for url in urlPath.extract()[1:10]:
             url = "http://www.espncricinfo.com" + url
             request = scrapy.Request(url, self.parse_player_details)
             request.meta['url']=url
